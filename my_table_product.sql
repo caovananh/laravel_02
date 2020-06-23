@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2020 at 12:18 PM
+-- Generation Time: Jun 23, 2020 at 12:44 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -96,6 +96,34 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `name`, `url`, `created`) VALUES
+(15, '1592902795.jpg', 'http://localhost/blog/public/images/1592902795.jpg', 1592902795),
+(16, '1592902807.jpg', 'http://localhost/blog/public/images/1592902807.jpg', 1592902807),
+(17, '1592902813.jpg', 'http://localhost/blog/public/images/1592902813.jpg', 1592902813),
+(18, '1592902824.jpg', 'http://localhost/blog/public/images/1592902824.jpg', 1592902824),
+(19, '1592903043.jpg', 'http://localhost/blog/public/images/1592903043.jpg', 1592903043),
+(20, '1592907270.jpg', 'http://localhost/blog/public/images/1592907270.jpg', 1592907270),
+(21, '1592907284.jpg', 'http://localhost/blog/public/images/1592907284.jpg', 1592907284),
+(22, '1592907504.jpg', 'http://localhost/blog/public/images/1592907504.jpg', 1592907504),
+(23, '1592907672.jpg', 'http://localhost/blog/public/images/1592907672.jpg', 1592907672);
 
 -- --------------------------------------------------------
 
@@ -258,16 +286,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `username`, `password`, `address`, `phone`, `image`, `created`, `status`, `level`) VALUES
-(2, 'tèo', 'teo@gmail.com', 'teo123', '81dc9bdb52d04dc20036dbd8313ed055', 'Q3, HCM.', 925124125, '1585401946-images.jpg.jfif', 1592486781, 1, 1),
-(3, 'teo', 'teo1234@gmail.com', 'teoxxx123', '0000', 'Q3, HCM', 952124466, '1585401961-abc.jfif', 1592461132, 1, NULL),
-(4, 'Tùng', 'tung@gmail.com', 'tung', '220466675e31b9d20c051d5e57974150', 'Q3.HCm', 951235466, '1585401978-avarta.jpg.jfif', 1592466585, 1, NULL),
-(5, 'Tùng 2', 'b@gmail.com', 'tung2', '202cb962ac59075b964b07152d234b70', 'Q3.HCm', 945125487, '1585402045-456.jfif', 1234567, 1, NULL),
-(6, 'Thị Nợ', 'thino@gmail.com', 'thino123', '202cb962ac59075b', 'Truong cong dinh Q3.HCm', 2147483647, '1585402577-images.jpg.jfif', 1592398308, 1, NULL),
-(49, 'Máy lau chén1', 'caovananhdn@gmail.com', 'admin12345', 'd41d8cd98f00b204', 'ádsad', 2147483647, NULL, 1592464164, 1, NULL),
-(50, 'ádsad', 'caovananh@gmail.com', 'admin123451', 'd41d8cd98f00b204', 'Thu duc district  , HCMC', 969137449, NULL, 1592466382, 1, NULL),
-(51, 'cao văn anh', 'caovananhdn@gmail.com', 'caovananh', '25d55ad283aa400a', 'Thu duc district  , HCMC', 969137449, NULL, 1592464203, 1, NULL),
-(54, 'máy', 'caovananhdn@gmail.com', 'caovananh11212', 'f1bfd514f667cebd', 'Thu duc district  , HCMC', 969137449, NULL, 1592464257, 1, NULL),
-(55, NULL, 'caovananhdn@gmail.com', 'user123', '202cb962ac59075b964b07152d234b70', 'Thu duc district  , HCMC', 969137449, NULL, NULL, NULL, 0);
+(55, NULL, 'caovananhdn@gmail.com', 'user123', '202cb962ac59075b964b07152d234b70', 'Thu duc district  , HCMC', 969137449, NULL, NULL, NULL, 0),
+(56, NULL, 'nguyendinhthanh48fc@gmail.com', 'caovananh', '202cb962ac59075b964b07152d234b70', 'Thu duc district  , HCMC', 969137449, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -306,6 +326,12 @@ ALTER TABLE `comment`
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -380,6 +406,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
 -- AUTO_INCREMENT for table `loyal_customers`
 --
 ALTER TABLE `loyal_customers`
@@ -413,7 +445,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `users`
