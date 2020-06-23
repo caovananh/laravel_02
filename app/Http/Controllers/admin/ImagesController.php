@@ -16,6 +16,7 @@ class ImagesController extends Controller
   
     public function dashboard(Request $request) {
         if(isset($_POST['submit'])) {
+            echo '123';
             $image = $request->file('file');
             $input['image_name'] = time().'.'.$image->getClientOriginalExtension();
             $path = public_path('images');
